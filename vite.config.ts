@@ -10,5 +10,10 @@ export default defineConfig({
     hmr: {
       clientPort: 3001
     }
+  },
+  preview: {
+    port: 3000,
+    host: '0.0.0.0',
+    strictPort: false
   }
 })
