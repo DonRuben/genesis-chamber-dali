@@ -13,13 +13,15 @@ function App() {
       home: 'Home',
       gallery: 'Gallery',
       documentation: 'Documentation',
-      brand: 'OMNIPRESENT',
+      brand: 'GENESIS CHAMBER',
+      footer: 'Death is optional for human creativity',
     },
     de: {
       home: 'Startseite',
       gallery: 'Galerie',
       documentation: 'Dokumentation',
-      brand: 'OMNIPRESENT',
+      brand: 'GENESIS CHAMBER',
+      footer: 'Der Tod ist optional für menschliche Kreativität',
     },
   };
 
@@ -94,10 +96,10 @@ function App() {
         <div className="footer-content">
           <div className="footer-brand">
             <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" />
-            <span>OMNIPRESENT</span>
+            <span>{t.brand}</span>
           </div>
           <div className="footer-text">
-            <p>{language === 'en' ? 'Death is optional for human creativity' : 'Der Tod ist optional für menschliche Kreativität'}</p>
+            <p>{t.footer}</p>
             <p className="footer-copyright">© 2025 Genesis Chamber. All rights reserved.</p>
           </div>
         </div>
