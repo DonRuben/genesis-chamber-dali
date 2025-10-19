@@ -1,3 +1,6 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './HomePage.css';
 
 interface HomePageProps {
@@ -6,6 +9,56 @@ interface HomePageProps {
 }
 
 const HomePage = ({ language, onExploreClick }: HomePageProps) => {
+  const heroRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Hero entrance animation
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      
+      tl.from(logoRef.current, {
+        scale: 0,
+        opacity: 0,
+        duration: 1.5,
+        ease: 'back.out(1.7)',
+      })
+      .from(titleRef.current, {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+      }, '-=0.8')
+      .from(subtitleRef.current, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+      }, '-=0.6');
+
+      // Scroll-triggered animations for sections
+      sectionRefs.current.forEach((section) => {
+        if (!section) return;
+
+        gsap.from(section, {
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: 1,
+            markers: false,
+          },
+          y: 100,
+          opacity: 0,
+          duration: 1,
+        });
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   const content = {
     en: {
       title: 'GENESIS CHAMBER',
@@ -53,24 +106,24 @@ const HomePage = ({ language, onExploreClick }: HomePageProps) => {
 
   return (
     <div className="homepage">
-      <section className="hero">
-        <div className="hero-logo">
+      <section ref={heroRef} className="hero">
+        <div ref={logoRef} className="hero-logo">
           <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" />
         </div>
-        <h1 className="hero-title">{t.title}</h1>
-        <p className="hero-subtitle">{t.subtitle}</p>
+        <h1 ref={titleRef} className="hero-title">{t.title}</h1>
+        <p ref={subtitleRef} className="hero-subtitle">{t.subtitle}</p>
         <div className="scroll-indicator">
           <span>{t.scroll}</span>
           <div className="scroll-arrow">↓</div>
         </div>
       </section>
 
-      <section className="section question-section">
+      <section ref={(el) => (sectionRefs.current[0] = el)} className="section question-section">
         <h2>{t.question}</h2>
         <p>{t.questionText}</p>
       </section>
 
-      <section className="section experiment-section">
+      <section ref={(el) => (sectionRefs.current[1] = el)} className="section experiment-section">
         <h2>{t.experiment}</h2>
         <p>{t.experimentText}</p>
         <div className="stats">
@@ -89,7 +142,7 @@ const HomePage = ({ language, onExploreClick }: HomePageProps) => {
         </div>
       </section>
 
-      <section className="section journey-section">
+      <section ref={(el) => (sectionRefs.current[2] = el)} className="section journey-section">
         <h2>{t.journey}</h2>
         <p>{t.journeyText}</p>
         <div className="timeline-preview">
@@ -112,16 +165,16 @@ const HomePage = ({ language, onExploreClick }: HomePageProps) => {
         </div>
       </section>
 
-      <section className="section physical-section">
+      <section ref={(el) => (sectionRefs.current[3] = el)} className="section physical-section">
         <h2>{t.physical}</h2>
         <p>{t.physicalText}</p>
       </section>
 
-      <section className="section quote-section">
+      <section ref={(el) => (sectionRefs.current[4] = el)} className="section quote-section">
         <blockquote>{t.quote}</blockquote>
       </section>
 
-      <section className="section cta-section">
+      <section ref={(el) => (sectionRefs.current[5] = el)} className="section cta-section">
         <h2>{t.cta}</h2>
         <p>{t.ctaText}</p>
         <button onClick={onExploreClick} className="cta-button">
@@ -133,4 +186,3 @@ const HomePage = ({ language, onExploreClick }: HomePageProps) => {
 };
 
 export default HomePage;
-

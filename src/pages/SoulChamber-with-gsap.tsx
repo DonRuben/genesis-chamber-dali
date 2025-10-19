@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './SoulChamber.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Artwork data structure with proper Genesis Chamber vocabulary
 interface Vision {
