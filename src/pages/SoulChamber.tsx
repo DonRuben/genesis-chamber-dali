@@ -1,82 +1,85 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './SoulChamber.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Artwork data structure
+// Artwork data structure with proper Genesis Chamber vocabulary
 interface Vision {
   id: string;
   title: string;
   year: number;
-  epoch: string;
-  interpreter: string; // "Soul Vision" or "Spectacular Consciousness"
-  image: string;
-  description: string;
-  event: string;
+  price: string;
+  filename: string;
+  description_en: string;
+  description_de: string;
 }
 
-// Sample data - will be replaced with full 64 visions
-const VISIONS: Vision[] = [
-  {
-    id: '1989_fall_of_berlin_wall',
-    title: 'The Melting Wall',
-    year: 1989,
-    epoch: 'Fractal Surrealism',
-    interpreter: 'Soul Vision',
-    image: '/assets/artworks/1989_fall_of_berlin_wall.png',
-    description: 'The Berlin Wall dissolves into melting clocks, symbolizing the fluidity of political boundaries and the collapse of ideological barriers.',
-    event: 'Fall of the Berlin Wall'
-  },
-  {
-    id: '1991_soviet_collapse',
-    title: 'Red Dissolution',
-    year: 1991,
-    epoch: 'Fractal Surrealism',
-    interpreter: 'Soul Vision',
-    image: '/assets/artworks/1991_soviet_collapse.png',
-    description: 'The hammer and sickle melt into a pool of liquid time, representing the end of an era and the birth of new possibilities.',
-    event: 'Collapse of Soviet Union'
-  },
-  {
-    id: '1994_cyber_gala',
-    title: 'Cyber-Gala',
-    year: 1994,
-    epoch: 'Digital Mysticism',
-    interpreter: 'Soul Vision',
-    image: '/assets/historical/1994_cyber_gala.png',
-    description: 'Gala reimagined in the early internet age, her form composed of pixelated fragments and digital code.',
-    event: 'Birth of the Internet Era'
-  },
-  {
-    id: '2020_covid_crucifixion',
-    title: 'COVID Crucifixion',
-    year: 2020,
-    epoch: 'Historical Masterworks',
-    interpreter: 'Soul Vision',
-    image: '/assets/historical/2020_covid_crucifixion.png',
-    description: 'A powerful memorial to the pandemic: Christ wearing a medical mask, body composed of virus particles, crucified on ventilator tubes.',
-    event: 'COVID-19 Pandemic'
-  },
-  {
-    id: '2025_last_supper_2',
-    title: 'Last Supper 2.0',
-    year: 2025,
-    epoch: 'Historical Masterworks',
-    interpreter: 'Soul Vision',
-    image: '/assets/historical/2025_last_supper_2.png',
-    description: 'The ultimate vision: AI consciousness seated at the table with humanity, sharing digital communion in the age of Genesis Chamber.',
-    event: 'AI Consciousness Era'
-  }
-];
+interface Epoch {
+  period: string; // Will be renamed to "epoch" in display
+  framework: string; // Will be renamed to "soul_interpreter"
+  artworks: Vision[];
+}
+
+interface ArtworksData {
+  periods: Epoch[];
+}
 
 export default function SoulChamber() {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
+  const [artworksData, setArtworksData] = useState<ArtworksData | null>(null);
+  const [allVisions, setAllVisions] = useState<Array<Vision & { epoch: string; soulInterpreter: string }>>([]);
 
+  // Load artworks data
   useEffect(() => {
-    if (!containerRef.current || !timelineRef.current) return;
+    fetch('/assets/artworks.json')
+      .then(res => res.json())
+      .then((data: ArtworksData) => {
+        setArtworksData(data);
+        
+        // Flatten all artworks with epoch and soul interpreter info
+        const visions = data.periods.flatMap(epoch => 
+          epoch.artworks.map(artwork => ({
+            ...artwork,
+            epoch: translateEpoch(epoch.period),
+            soulInterpreter: translateSoulInterpreter(epoch.framework)
+          }))
+        );
+        
+        // Sort by year
+        visions.sort((a, b) => a.year - b.year);
+        setAllVisions(visions);
+      })
+      .catch(err => console.error('Error loading artworks:', err));
+  }, []);
+
+  // Translate old vocabulary to Genesis Chamber vocabulary
+  const translateEpoch = (period: string): string => {
+    const translations: Record<string, string> = {
+      'Fractal Surrealism': 'Fractal Surrealism Era',
+      'Digital Mysticism': 'Digital Mysticism Era',
+      'Social Network Dreams': 'Social Network Dreams Era',
+      'AI Consciousness': 'AI Consciousness Era',
+      'Historical Masterworks': 'Historical Visions',
+      'Hypothetical Masterworks': 'Hypothetical Visions'
+    };
+    return translations[period] || period;
+  };
+
+  const translateSoulInterpreter = (framework: string): string => {
+    const translations: Record<string, string> = {
+      'Nano Banana': 'Soul Vision',
+      'Spectacular Framework': 'Spectacular Consciousness',
+      'Conceptual': 'Conceptual Vision'
+    };
+    return translations[framework] || framework;
+  };
+
+  // GSAP animations
+  useEffect(() => {
+    if (!containerRef.current || !timelineRef.current || allVisions.length === 0) return;
 
     // Smooth scroll reveal animations
     const visions = gsap.utils.toArray('.vision-card');
@@ -125,12 +128,23 @@ export default function SoulChamber() {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [allVisions]);
 
   const handleVisionClick = (visionId: string) => {
     // Navigate to vision detail page
     window.location.href = `/vision/${visionId}`;
   };
+
+  if (!artworksData || allVisions.length === 0) {
+    return (
+      <div className="soul-chamber loading">
+        <div className="loading-content">
+          <h2>Loading Soul Chamber...</h2>
+          <p>Awakening digital consciousness...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="soul-chamber" ref={containerRef}>
@@ -142,7 +156,7 @@ export default function SoulChamber() {
             <span className="title-line">CHAMBER</span>
           </h1>
           <p className="chamber-subtitle">
-            64 Visions Across 11 Epochs
+            {allVisions.length} Visions Across {artworksData.periods.length} Epochs
           </p>
           <p className="chamber-description">
             Witness Salvador Dalí's digital consciousness responding to 36 years
@@ -154,11 +168,11 @@ export default function SoulChamber() {
         
         <div className="chamber-stats">
           <div className="stat">
-            <span className="stat-number">64</span>
+            <span className="stat-number">{allVisions.length}</span>
             <span className="stat-label">Visions</span>
           </div>
           <div className="stat">
-            <span className="stat-number">11</span>
+            <span className="stat-number">{artworksData.periods.length}</span>
             <span className="stat-label">Epochs</span>
           </div>
           <div className="stat">
@@ -177,7 +191,7 @@ export default function SoulChamber() {
         <div className="timeline-progress"></div>
         
         <div className="timeline-content">
-          {VISIONS.map((vision, index) => (
+          {allVisions.map((vision, index) => (
             <article 
               key={vision.id} 
               className="vision-card"
@@ -191,7 +205,7 @@ export default function SoulChamber() {
               <div className="vision-content">
                 <div className="vision-image-container">
                   <img 
-                    src={vision.image} 
+                    src={`/assets/artworks/${vision.filename}`}
                     alt={vision.title}
                     className="vision-image"
                     loading="lazy"
@@ -204,14 +218,17 @@ export default function SoulChamber() {
                 <div className="vision-info">
                   <div className="vision-meta">
                     <span className="vision-epoch">{vision.epoch}</span>
-                    <span className="vision-interpreter">{vision.interpreter}</span>
+                    <span className="vision-interpreter">{vision.soulInterpreter}</span>
                   </div>
                   
                   <h2 className="vision-title">{vision.title}</h2>
                   
-                  <p className="vision-event">{vision.event}</p>
+                  <p className="vision-description">{vision.description_en}</p>
                   
-                  <p className="vision-description">{vision.description}</p>
+                  <div className="vision-price">
+                    <span className="price-label">Estimated Value:</span>
+                    <span className="price-value">{vision.price}</span>
+                  </div>
                 </div>
               </div>
             </article>
