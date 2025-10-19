@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from '@studio-freight/lenis';
 import './SoulChamber.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,7 +34,7 @@ export default function SoulChamber({ language }: SoulChamberProps) {
   const [artworksData, setArtworksData] = useState<ArtworksData | null>(null);
   const [allVisions, setAllVisions] = useState<Array<Vision & { epoch: string; soulInterpreter: string }>>([]);
   const [selectedVision, setSelectedVision] = useState<(Vision & { epoch: string; soulInterpreter: string }) | null>(null);
-  const lenisRef = useRef<Lenis | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Load artworks data
   useEffect(() => {
@@ -54,70 +53,46 @@ export default function SoulChamber({ language }: SoulChamberProps) {
         
         visions.sort((a, b) => a.year - b.year);
         setAllVisions(visions);
+        setIsLoading(false);
       })
-      .catch(err => console.error('Error loading artworks:', err));
-  }, []);
-
-  // Initialize Lenis smooth scroll
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    lenisRef.current = lenis;
-
-    // Connect Lenis to GSAP ScrollTrigger
-    lenis.on('scroll', ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-
-    return () => {
-      lenis.destroy();
-      gsap.ticker.remove((time) => {
-        lenis.raf(time * 1000);
+      .catch(err => {
+        console.error('Error loading artworks:', err);
+        setIsLoading(false);
       });
-    };
   }, []);
 
-  // GSAP scroll animations
+  // Simple GSAP scroll animations (no Lenis)
   useEffect(() => {
     if (allVisions.length === 0) return;
 
-    // Animate vision cards on scroll
-    gsap.utils.toArray<HTMLElement>('.vision-card').forEach((card, index) => {
-      gsap.fromTo(card,
-        {
-          opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            end: 'top 50%',
-            scrub: 1,
+    // Wait for DOM to be ready
+    const timer = setTimeout(() => {
+      const cards = document.querySelectorAll('.vision-card');
+      
+      cards.forEach((card) => {
+        gsap.fromTo(card,
+          {
+            opacity: 0,
+            y: 60,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 90%',
+              end: 'top 60%',
+              toggleActions: 'play none none none',
+            }
           }
-        }
-      );
-    });
+        );
+      });
+    }, 100);
 
     return () => {
+      clearTimeout(timer);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, [allVisions]);
@@ -143,6 +118,17 @@ export default function SoulChamber({ language }: SoulChamberProps) {
     return translations[framework] || framework;
   };
 
+  if (isLoading) {
+    return (
+      <div className="soul-chamber loading">
+        <div className="loading-content">
+          <h2>Loading Soul Chamber...</h2>
+          <p>Awakening consciousness...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="soul-chamber">
       {/* Header */}
@@ -164,7 +150,7 @@ export default function SoulChamber({ language }: SoulChamberProps) {
 
       {/* Gallery Grid */}
       <div className="visions-grid">
-        {allVisions.map((vision, index) => (
+        {allVisions.map((vision) => (
           <div 
             key={vision.id} 
             className="vision-card"
