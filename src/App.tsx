@@ -1,24 +1,9 @@
 import { useState } from 'react';
-import HomePage from './pages/HomePage';
-import SoulChamber from './pages/SoulChamber';
 import './styles/global.css';
 import './styles/navigation.css';
 
 export default function App() {
   const [language, setLanguage] = useState<'en' | 'de'>('en');
-  const [activeSection, setActiveSection] = useState('home');
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setActiveSection(sectionId);
-    }
-  };
-
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'de' : 'en');
-  };
 
   return (
     <div className="app">
@@ -31,26 +16,17 @@ export default function App() {
           </div>
           
           <div className="nav-links">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className={activeSection === 'home' ? 'active' : ''}
-            >
+            <button className="active">
               {language === 'en' ? 'Home' : 'Startseite'}
             </button>
-            <button 
-              onClick={() => scrollToSection('soul-chamber')}
-              className={activeSection === 'soul-chamber' ? 'active' : ''}
-            >
+            <button>
               {language === 'en' ? 'Gallery' : 'Galerie'}
             </button>
-            <button 
-              onClick={() => scrollToSection('documentation')}
-              className={activeSection === 'documentation' ? 'active' : ''}
-            >
+            <button>
               {language === 'en' ? 'Documentation' : 'Dokumentation'}
             </button>
             <button 
-              onClick={toggleLanguage}
+              onClick={() => setLanguage(prev => prev === 'en' ? 'de' : 'en')}
               className="language-toggle"
             >
               {language === 'en' ? 'DE' : 'EN'}
@@ -60,36 +36,33 @@ export default function App() {
       </nav>
 
       {/* Main Content */}
-      <main className="main-content">
-        <section id="home">
-          <HomePage language={language} onExploreClick={() => scrollToSection('soul-chamber')} />
-        </section>
-        
-        <section id="soul-chamber">
-          <SoulChamber language={language} />
-        </section>
-        
-        <section id="documentation" className="documentation-section">
-          <div className="documentation-content">
-            <h2>{language === 'en' ? 'Documentation' : 'Dokumentation'}</h2>
-            <p>{language === 'en' 
-              ? 'Complete Genesis Chamber documentation coming soon...' 
-              : 'Vollständige Genesis Chamber Dokumentation folgt in Kürze...'}
-            </p>
-          </div>
-        </section>
+      <main className="main-content" style={{ padding: '8rem 2rem', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '4rem', marginBottom: '2rem', color: '#F27123' }}>
+          GENESIS CHAMBER
+        </h1>
+        <p style={{ fontSize: '2rem', marginBottom: '3rem', color: '#E9E7E4' }}>
+          Salvador Dalí: The First Digital Soul
+        </p>
+        <p style={{ fontSize: '1.2rem', color: '#BFBFBF', maxWidth: '800px', margin: '0 auto' }}>
+          {language === 'en' 
+            ? 'The Genesis Chamber website is loading. This is a test deployment to verify React is working correctly. Full content will be added once the deployment issue is resolved.' 
+            : 'Die Genesis Chamber Website wird geladen. Dies ist eine Test-Bereitstellung, um zu überprüfen, ob React korrekt funktioniert. Der vollständige Inhalt wird hinzugefügt, sobald das Bereitstellungsproblem gelöst ist.'}
+        </p>
+        <div style={{ marginTop: '3rem', padding: '1rem 2rem', background: '#F27123', color: '#1B1D22', display: 'inline-block', borderRadius: '4px' }}>
+          ✓ React is rendering successfully
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="main-footer">
+      <footer className="main-footer" style={{ padding: '4rem 2rem', textAlign: 'center', borderTop: '1px solid #5C5C5C' }}>
         <div className="footer-content">
-          <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" className="footer-logo" />
-          <p>
+          <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" style={{ width: '40px', marginBottom: '1rem' }} />
+          <p style={{ color: '#BFBFBF' }}>
             {language === 'en' 
               ? 'Where death ends, Genesis begins' 
               : 'Wo der Tod endet, beginnt Genesis'}
           </p>
-          <p className="footer-copyright">
+          <p style={{ color: '#5C5C5C', marginTop: '1rem' }}>
             Built with Genesis Chamber Soul Simulation Neural Framework Digital
           </p>
         </div>
