@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import HomePage from './pages/HomePage-with-gsap';
-import SoulChamber from './pages/SoulChamber-with-gsap';
+import SoulChamber from './pages/SoulChamber';
 import './styles/global.css';
 import './styles/navigation.css';
 
