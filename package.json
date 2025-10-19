@@ -19,6 +19,7 @@
     "vite": "^7.1.10"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "lenis": "^1.3.11",
     "lg-thumbnail": "^1.2.1",
     "lg-video": "^1.4.0",

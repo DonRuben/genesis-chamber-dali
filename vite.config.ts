@@ -14,6 +14,7 @@ export default defineConfig({
   preview: {
     port: 3000,
     host: '0.0.0.0',
-    strictPort: false
+    strictPort: false,
+    allowedHosts: ['5001-i10auy1hwfzp1cm3kgyex-75ac310f.manusvm.computer']
   }
 })
