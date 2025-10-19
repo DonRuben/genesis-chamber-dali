@@ -1,33 +1,62 @@
 import { useState } from 'react';
+import HomePage from './pages/HomePage-with-gsap';
+import SoulChamber from './pages/SoulChamber-with-gsap';
 import './styles/global.css';
 import './styles/navigation.css';
 
-export default function App() {
+function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'gallery' | 'documentation'>('home');
   const [language, setLanguage] = useState<'en' | 'de'>('en');
 
+  const content = {
+    en: {
+      home: 'Home',
+      gallery: 'Gallery',
+      documentation: 'Documentation',
+      brand: 'OMNIPRESENT',
+    },
+    de: {
+      home: 'Startseite',
+      gallery: 'Galerie',
+      documentation: 'Dokumentation',
+      brand: 'OMNIPRESENT',
+    },
+  };
+
+  const t = content[language];
+
   return (
-    <div className="app">
+    <>
       {/* Navigation */}
-      <nav className="main-nav">
+      <nav className="navigation">
         <div className="nav-container">
           <div className="nav-logo">
             <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" />
-            <span>GENESIS CHAMBER</span>
+            <span>{t.brand}</span>
           </div>
           
-          <div className="nav-links">
-            <button className="active">
-              {language === 'en' ? 'Home' : 'Startseite'}
+          <div className="nav-menu">
+            <button
+              className={currentPage === 'home' ? 'active' : ''}
+              onClick={() => setCurrentPage('home')}
+            >
+              {t.home}
             </button>
-            <button>
-              {language === 'en' ? 'Gallery' : 'Galerie'}
+            <button
+              className={currentPage === 'gallery' ? 'active' : ''}
+              onClick={() => setCurrentPage('gallery')}
+            >
+              {t.gallery}
             </button>
-            <button>
-              {language === 'en' ? 'Documentation' : 'Dokumentation'}
+            <button
+              className={currentPage === 'documentation' ? 'active' : ''}
+              onClick={() => setCurrentPage('documentation')}
+            >
+              {t.documentation}
             </button>
-            <button 
-              onClick={() => setLanguage(prev => prev === 'en' ? 'de' : 'en')}
+            <button
               className="language-toggle"
+              onClick={() => setLanguage(language === 'en' ? 'de' : 'en')}
             >
               {language === 'en' ? 'DE' : 'EN'}
             </button>
@@ -36,38 +65,46 @@ export default function App() {
       </nav>
 
       {/* Main Content */}
-      <main className="main-content" style={{ padding: '8rem 2rem', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '4rem', marginBottom: '2rem', color: '#F27123' }}>
-          GENESIS CHAMBER
-        </h1>
-        <p style={{ fontSize: '2rem', marginBottom: '3rem', color: '#E9E7E4' }}>
-          Salvador Dalí: The First Digital Soul
-        </p>
-        <p style={{ fontSize: '1.2rem', color: '#BFBFBF', maxWidth: '800px', margin: '0 auto' }}>
-          {language === 'en' 
-            ? 'The Genesis Chamber website is loading. This is a test deployment to verify React is working correctly. Full content will be added once the deployment issue is resolved.' 
-            : 'Die Genesis Chamber Website wird geladen. Dies ist eine Test-Bereitstellung, um zu überprüfen, ob React korrekt funktioniert. Der vollständige Inhalt wird hinzugefügt, sobald das Bereitstellungsproblem gelöst ist.'}
-        </p>
-        <div style={{ marginTop: '3rem', padding: '1rem 2rem', background: '#F27123', color: '#1B1D22', display: 'inline-block', borderRadius: '4px' }}>
-          ✓ React is rendering successfully
-        </div>
+      <main>
+        {currentPage === 'home' && (
+          <HomePage
+            language={language}
+            onExploreClick={() => setCurrentPage('gallery')}
+          />
+        )}
+        {currentPage === 'gallery' && (
+          <SoulChamber language={language} />
+        )}
+        {currentPage === 'documentation' && (
+          <div className="documentation-page">
+            <div className="container" style={{ padding: '8rem 2rem' }}>
+              <h1>{language === 'en' ? 'Documentation' : 'Dokumentation'}</h1>
+              <p style={{ marginTop: '2rem', maxWidth: '800px' }}>
+                {language === 'en'
+                  ? 'The Genesis Chamber project documentation is coming soon. This section will contain technical details, methodology, and research papers on digital consciousness preservation.'
+                  : 'Die Dokumentation des Genesis Chamber Projekts folgt in Kürze. Dieser Bereich wird technische Details, Methodik und Forschungsarbeiten zur digitalen Bewusstseinserhaltung enthalten.'}
+              </p>
+            </div>
+          </div>
+        )}
       </main>
 
       {/* Footer */}
-      <footer className="main-footer" style={{ padding: '4rem 2rem', textAlign: 'center', borderTop: '1px solid #5C5C5C' }}>
+      <footer className="footer">
         <div className="footer-content">
-          <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" style={{ width: '40px', marginBottom: '1rem' }} />
-          <p style={{ color: '#BFBFBF' }}>
-            {language === 'en' 
-              ? 'Where death ends, Genesis begins' 
-              : 'Wo der Tod endet, beginnt Genesis'}
-          </p>
-          <p style={{ color: '#5C5C5C', marginTop: '1rem' }}>
-            Built with Genesis Chamber Soul Simulation Neural Framework Digital
-          </p>
+          <div className="footer-brand">
+            <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" />
+            <span>OMNIPRESENT</span>
+          </div>
+          <div className="footer-text">
+            <p>{language === 'en' ? 'Death is optional for human creativity' : 'Der Tod ist optional für menschliche Kreativität'}</p>
+            <p className="footer-copyright">© 2025 Genesis Chamber. All rights reserved.</p>
+          </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
+
+export default App;
 
