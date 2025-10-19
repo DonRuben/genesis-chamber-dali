@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { useEffect, useRef, useState } from 'react';
 import './SoulChamber.css';
 
@@ -77,58 +78,58 @@ export default function SoulChamber({ language }: SoulChamberProps) {
     return translations[framework] || framework;
   };
 
-  // GSAP animations
-  useEffect(() => {
-    if (!containerRef.current || !timelineRef.current || allVisions.length === 0) return;
-
-    // Smooth scroll reveal animations
-    const visions = gsap.utils.toArray('.vision-card');
-    
-    visions.forEach((vision: any, index: number) => {
-      gsap.from(vision, {
-        scrollTrigger: {
-          trigger: vision,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: 1,
-        },
-        opacity: 0,
-        y: 100,
-        scale: 0.9,
-        duration: 1,
-      });
-
-      // Parallax effect for images
-      const image = vision.querySelector('.vision-image');
-      if (image) {
-        gsap.to(image, {
-          scrollTrigger: {
-            trigger: vision,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-          y: -50,
-        });
-      }
-    });
-
-    // Timeline progress indicator
-    gsap.to('.timeline-progress', {
-      scrollTrigger: {
-        trigger: timelineRef.current,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      },
-      scaleY: 1,
-      transformOrigin: 'top',
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, [allVisions]);
+//   // GSAP animations
+//   useEffect(() => {
+//     if (!containerRef.current || !timelineRef.current || allVisions.length === 0) return;
+// 
+//     // Smooth scroll reveal animations
+//     const visions = gsap.utils.toArray('.vision-card');
+//     
+//     visions.forEach((vision: any, index: number) => {
+//       gsap.from(vision, {
+//         scrollTrigger: {
+//           trigger: vision,
+//           start: 'top 80%',
+//           end: 'top 20%',
+//           scrub: 1,
+//         },
+//         opacity: 0,
+//         y: 100,
+//         scale: 0.9,
+//         duration: 1,
+//       });
+// 
+//       // Parallax effect for images
+//       const image = vision.querySelector('.vision-image');
+//       if (image) {
+//         gsap.to(image, {
+//           scrollTrigger: {
+//             trigger: vision,
+//             start: 'top bottom',
+//             end: 'bottom top',
+//             scrub: true,
+//           },
+//           y: -50,
+//         });
+//       }
+//     });
+// 
+//     // Timeline progress indicator
+//     gsap.to('.timeline-progress', {
+//       scrollTrigger: {
+//         trigger: timelineRef.current,
+//         start: 'top top',
+//         end: 'bottom bottom',
+//         scrub: true,
+//       },
+//       scaleY: 1,
+//       transformOrigin: 'top',
+//     });
+// 
+//     return () => {
+//       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+//     };
+//   }, [allVisions]);
 
   const handleVisionClick = (visionId: string) => {
     // Navigate to vision detail page
