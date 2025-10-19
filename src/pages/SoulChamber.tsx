@@ -26,7 +26,11 @@ interface ArtworksData {
   periods: Epoch[];
 }
 
-export default function SoulChamber() {
+interface SoulChamberProps {
+  language: 'en' | 'de';
+}
+
+export default function SoulChamber({ language }: SoulChamberProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const [artworksData, setArtworksData] = useState<ArtworksData | null>(null);

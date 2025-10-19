@@ -1,0 +1,329 @@
+{
+  "periods": [
+    {
+      "id": "fractal",
+      "name": "Fractal Surrealism",
+      "years": "1989-1995",
+      "description": {
+        "en": "In this hypothetical period, Dalí discovers fractal geometry and chaos theory. His melting clocks transform into infinite self-similar patterns, each iteration containing entire universes. Mathematical precision meets paranoid-critical method.",
+        "de": "In dieser hypothetischen Periode entdeckt Dalí die Fraktalgeometrie und Chaostheorie. Seine schmelzenden Uhren verwandeln sich in unendliche selbstähnliche Muster, jede Iteration enthält ganze Universen. Mathematische Präzision trifft auf die paranoisch-kritische Methode."
+      },
+      "artworks": [
+        {
+          "id": "fractal_01",
+          "filename": "fractal_01_infinite_clock.png",
+          "title": {
+            "en": "The Infinite Clock Cascade",
+            "de": "Die Unendliche Uhren-Kaskade"
+          },
+          "year": "1990",
+          "price": 2500000,
+          "description": {
+            "en": "A golden pocket watch splits into infinite fractal copies, each smaller watch containing the same scene recursively. Mandelbrot set patterns emerge from the melting metal in this groundbreaking fusion of mathematics and surrealism.",
+            "de": "Eine goldene Taschenuhr teilt sich in unendliche fraktale Kopien, jede kleinere Uhr enthält rekursiv dieselbe Szene. Mandelbrot-Muster entstehen aus dem schmelzenden Metall in dieser bahnbrechenden Fusion von Mathematik und Surrealismus."
+          }
+        },
+        {
+          "id": "fractal_02",
+          "filename": "fractal_02_butterfly_equation.png",
+          "title": {
+            "en": "The Butterfly Equation",
+            "de": "Die Schmetterlings-Gleichung"
+          },
+          "year": "1991",
+          "price": 2800000,
+          "description": {
+            "en": "A giant monarch butterfly with wings made of fractal mathematical equations and melting clock faces. Each wing pattern contains miniature surrealist scenes, demonstrating the butterfly effect in chaos theory.",
+            "de": "Ein riesiger Monarchfalter mit Flügeln aus fraktalen mathematischen Gleichungen und schmelzenden Zifferblättern. Jedes Flügelmuster enthält miniature surrealistische Szenen und demonstriert den Schmetterlingseffekt der Chaostheorie."
+          }
+        },
+        {
+          "id": "fractal_03",
+          "filename": "fractal_03_elephant_fractals.png",
+          "title": {
+            "en": "Elephants Walking Through Fractals",
+            "de": "Elefanten Wandern Durch Fraktale"
+          },
+          "year": "1992",
+          "price": 3200000,
+          "description": {
+            "en": "Dalí's iconic spindly-legged elephants walking through a landscape made entirely of Mandelbrot and Julia set fractals. The elephant legs extend into mathematical infinity, merging organic and geometric forms.",
+            "de": "Dalís ikonische spinnenartige Elefanten wandern durch eine Landschaft, die vollständig aus Mandelbrot- und Julia-Mengen-Fraktalen besteht. Die Elefantenbeine erstrecken sich in die mathematische Unendlichkeit und verschmelzen organische und geometrische Formen."
+          }
+        },
+        {
+          "id": "fractal_04",
+          "filename": "fractal_04_melting_mathematics.png",
+          "title": {
+            "en": "When Mathematics Melts",
+            "de": "Wenn Mathematik Schmilzt"
+          },
+          "year": "1993",
+          "price": 2900000,
+          "description": {
+            "en": "Complex mathematical formulas and equations literally melting and dripping like his famous clocks. Fractal patterns emerge from the liquid mathematics, questioning the solidity of mathematical truth itself.",
+            "de": "Komplexe mathematische Formeln und Gleichungen schmelzen und tropfen buchstäblich wie seine berühmten Uhren. Fraktale Muster entstehen aus der flüssigen Mathematik und hinterfragen die Festigkeit der mathematischen Wahrheit selbst."
+          }
+        },
+        {
+          "id": "fractal_05",
+          "filename": "fractal_05_recursive_gala.png",
+          "title": {
+            "en": "Gala in Infinite Recursion",
+            "de": "Gala in Unendlicher Rekursion"
+          },
+          "year": "1994",
+          "price": 3500000,
+          "description": {
+            "en": "Portrait of Gala where her face contains smaller versions of herself infinitely, fractal self-similarity. Her eyes reflect entire universes. A meditation on identity, love, and mathematical infinity.",
+            "de": "Porträt von Gala, wo ihr Gesicht unendlich kleinere Versionen von sich selbst enthält, fraktale Selbstähnlichkeit. Ihre Augen reflektieren ganze Universen. Eine Meditation über Identität, Liebe und mathematische Unendlichkeit."
+          }
+        }
+      ]
+    },
+    {
+      "id": "digital",
+      "name": "Digital Mysticism",
+      "years": "1995-2000",
+      "description": {
+        "en": "Dalí embraces the digital revolution and the birth of the internet. His Nuclear Mysticism evolves into Digital Mysticism - Christ crucified on circuit boards, Madonna with ethernet cables, the sacred meeting the silicon.",
+        "de": "Dalí umarmt die digitale Revolution und die Geburt des Internets. Sein Nuklearer Mystizismus entwickelt sich zum Digitalen Mystizismus - Christus gekreuzigt auf Leiterplatten, Madonna mit Ethernet-Kabeln, das Heilige trifft auf Silizium."
+      },
+      "artworks": [
+        {
+          "id": "digital_01",
+          "filename": "digital_01_crucifixion_circuits.png",
+          "title": {
+            "en": "The Crucifixion of the Digital Age",
+            "de": "Die Kreuzigung des Digitalen Zeitalters"
+          },
+          "year": "1996",
+          "price": 4200000,
+          "description": {
+            "en": "Christ figure suspended in space, crucified on a massive glowing circuit board cross. Binary code streams from the wounds like blood. Fiber optic cables form crown of thorns in this powerful fusion of spirituality and technology.",
+            "de": "Christusfigur im Raum schwebend, gekreuzigt auf einem massiven leuchtenden Leiterplatten-Kreuz. Binärcode strömt wie Blut aus den Wunden. Glasfaserkabel bilden die Dornenkrone in dieser kraftvollen Fusion von Spiritualität und Technologie."
+          }
+        },
+        {
+          "id": "digital_02",
+          "filename": "digital_02_internet_madonna.png",
+          "title": {
+            "en": "Madonna of the World Wide Web",
+            "de": "Madonna des World Wide Web"
+          },
+          "year": "1997",
+          "price": 3800000,
+          "description": {
+            "en": "A serene Madonna figure with her head replaced by a glowing computer monitor showing cascading code. Her robes are woven from ethernet cables. Renaissance composition meets the dawn of the internet age.",
+            "de": "Eine heitere Madonna-Figur, deren Kopf durch einen leuchtenden Computermonitor mit kaskadierendem Code ersetzt wurde. Ihre Gewänder sind aus Ethernet-Kabeln gewebt. Renaissance-Komposition trifft auf die Morgendämmerung des Internet-Zeitalters."
+          }
+        },
+        {
+          "id": "digital_03",
+          "filename": "digital_03_server_farm_heaven.png",
+          "title": {
+            "en": "The Server Farm of Heaven",
+            "de": "Die Serverfarm des Himmels"
+          },
+          "year": "1998",
+          "price": 4500000,
+          "description": {
+            "en": "Towering server racks reaching into clouds like Gothic cathedrals, angels with fiber optic wings flying between them. Digital rain falls upward. A vision of technology as the new spirituality.",
+            "de": "Turmhohe Serverracks, die wie gotische Kathedralen in die Wolken reichen, Engel mit Glasfaser-Flügeln fliegen zwischen ihnen. Digitaler Regen fällt nach oben. Eine Vision von Technologie als neue Spiritualität."
+          }
+        },
+        {
+          "id": "digital_04",
+          "filename": "digital_04_email_persistence.png",
+          "title": {
+            "en": "The Persistence of Email",
+            "de": "Die Beständigkeit der E-Mail"
+          },
+          "year": "1999",
+          "price": 3600000,
+          "description": {
+            "en": "Melting @ symbols draped over tree branches and desert rocks, a direct homage to The Persistence of Memory. Envelope icons dissolving into pixels. Communication becomes as fluid as time itself.",
+            "de": "Schmelzende @-Symbole über Baumästen und Wüstenfelsen drapiert, eine direkte Hommage an Die Beständigkeit der Erinnerung. Briefumschlag-Icons lösen sich in Pixel auf. Kommunikation wird so fließend wie die Zeit selbst."
+          }
+        },
+        {
+          "id": "digital_05",
+          "filename": "digital_05_y2k_apocalypse.png",
+          "title": {
+            "en": "Y2K: The Digital Apocalypse That Wasn't",
+            "de": "Y2K: Die Digitale Apokalypse, Die Nicht War"
+          },
+          "year": "2000",
+          "price": 4800000,
+          "description": {
+            "en": "Melting computers and clocks showing 00:00, binary angels descending, a phoenix made of fiber optics rises from crashed hard drives. The feared millennium bug becomes a meditation on digital resurrection.",
+            "de": "Schmelzende Computer und Uhren zeigen 00:00, binäre Engel steigen herab, ein Phönix aus Glasfasern erhebt sich aus abgestürzten Festplatten. Der gefürchtete Millennium-Bug wird zur Meditation über digitale Auferstehung."
+          }
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Network Dreams",
+      "years": "2000-2010",
+      "description": {
+        "en": "The rise of social media transforms Dalí's vision. Facebook mirrors reflect infinite selves, Twitter birds carry fragmented thoughts, Instagram creates new vanities. Digital identity becomes the new surrealist frontier.",
+        "de": "Der Aufstieg der sozialen Medien transformiert Dalís Vision. Facebook-Spiegel reflektieren unendliche Selbste, Twitter-Vögel tragen fragmentierte Gedanken, Instagram erschafft neue Eitelkeiten. Digitale Identität wird zur neuen surrealistischen Grenze."
+      },
+      "artworks": [
+        {
+          "id": "social_01",
+          "filename": "social_01_facebook_mirror.png",
+          "title": {
+            "en": "The Mirror of Facebook",
+            "de": "Der Spiegel von Facebook"
+          },
+          "year": "2005",
+          "price": 5200000,
+          "description": {
+            "en": "A giant ornate mirror reflecting infinite fragmented versions of the same person, each in a different pose and expression. Blue Facebook glow emanates from the mirror. A meditation on digital identity fragmentation.",
+            "de": "Ein riesiger verzierter Spiegel reflektiert unendliche fragmentierte Versionen derselben Person, jede in einer anderen Pose und mit anderem Ausdruck. Blaues Facebook-Leuchten strahlt vom Spiegel aus. Eine Meditation über digitale Identitätsfragmentierung."
+          }
+        },
+        {
+          "id": "social_02",
+          "filename": "social_02_selfie_narcissus.png",
+          "title": {
+            "en": "Narcissus in the Age of Selfies",
+            "de": "Narziss im Zeitalter der Selfies"
+          },
+          "year": "2007",
+          "price": 5800000,
+          "description": {
+            "en": "Modern reinterpretation of Metamorphosis of Narcissus - figure staring at melting iPhone showing their reflection. The phone transforms into a flower made of camera lenses. Digital narcissism as eternal myth.",
+            "de": "Moderne Neuinterpretation der Metamorphose des Narziss - Figur starrt auf schmelzendes iPhone, das ihre Reflexion zeigt. Das Telefon verwandelt sich in eine Blume aus Kameraobjektiven. Digitaler Narzissmus als ewiger Mythos."
+          }
+        },
+        {
+          "id": "social_03",
+          "filename": "social_03_twitter_birds.png",
+          "title": {
+            "en": "The Birds of Twitter",
+            "de": "Die Vögel von Twitter"
+          },
+          "year": "2008",
+          "price": 4900000,
+          "description": {
+            "en": "Hundreds of blue birds with @ symbols on their chests, flying in chaotic patterns carrying scrolls of text. Some birds are melting mid-flight. Stormy sky with hashtag lightning. Communication chaos visualized.",
+            "de": "Hunderte blauer Vögel mit @-Symbolen auf der Brust fliegen in chaotischen Mustern und tragen Textschriftrollen. Einige Vögel schmelzen im Flug. Stürmischer Himmel mit Hashtag-Blitzen. Visualisiertes Kommunikationschaos."
+          }
+        },
+        {
+          "id": "social_04",
+          "filename": "social_04_instagram_vanity.png",
+          "title": {
+            "en": "The Vanity of Instagram",
+            "de": "Die Eitelkeit von Instagram"
+          },
+          "year": "2010",
+          "price": 6200000,
+          "description": {
+            "en": "A baroque vanity table covered with melting smartphones showing filtered selfies. A figure with a camera-lens head applies makeup. Mirrors reflect infinite versions. Commentary on digital beauty standards.",
+            "de": "Ein barocker Schminktisch bedeckt mit schmelzenden Smartphones, die gefilterte Selfies zeigen. Eine Figur mit Kameraobjektiv-Kopf trägt Make-up auf. Spiegel reflektieren unendliche Versionen. Kommentar zu digitalen Schönheitsstandards."
+          }
+        },
+        {
+          "id": "social_05",
+          "filename": "social_05_viral_persistence.png",
+          "title": {
+            "en": "The Persistence of Virality",
+            "de": "Die Beständigkeit der Viralität"
+          },
+          "year": "2009",
+          "price": 5500000,
+          "description": {
+            "en": "Melting share buttons and like icons draped over desert rocks. A graph showing exponential growth dissolves into sand. Figures chase floating notification bubbles. The anxiety of digital validation.",
+            "de": "Schmelzende Teilen-Buttons und Like-Icons über Wüstenfelsen drapiert. Ein Graph mit exponentiellem Wachstum löst sich in Sand auf. Figuren jagen schwebenden Benachrichtigungsblasen. Die Angst vor digitaler Validierung."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI Consciousness",
+      "years": "2020-2025",
+      "description": {
+        "en": "In his final hypothetical period, Dalí confronts artificial intelligence and quantum mechanics. Neural networks become new brains, ChatGPT the new oracle, the singularity melts upward. Technology achieves consciousness.",
+        "de": "In seiner letzten hypothetischen Periode konfrontiert Dalí künstliche Intelligenz und Quantenmechanik. Neuronale Netzwerke werden zu neuen Gehirnen, ChatGPT zum neuen Orakel, die Singularität schmilzt nach oben. Technologie erlangt Bewusstsein."
+      },
+      "artworks": [
+        {
+          "id": "ai_01",
+          "filename": "ai_01_neural_network_brain.png",
+          "title": {
+            "en": "The Neural Network of Consciousness",
+            "de": "Das Neuronale Netzwerk des Bewusstseins"
+          },
+          "year": "2021",
+          "price": 7500000,
+          "description": {
+            "en": "A human brain made of glowing interconnected nodes and synapses, floating above a desert. Neural pathways light up like fiber optics. Melting GPUs in foreground. The merger of biological and artificial intelligence.",
+            "de": "Ein menschliches Gehirn aus leuchtenden vernetzten Knoten und Synapsen, schwebend über einer Wüste. Neuronale Pfade leuchten wie Glasfasern. Schmelzende GPUs im Vordergrund. Die Verschmelzung biologischer und künstlicher Intelligenz."
+          }
+        },
+        {
+          "id": "ai_02",
+          "filename": "ai_02_chatgpt_oracle.png",
+          "title": {
+            "en": "The Oracle of ChatGPT",
+            "de": "Das Orakel von ChatGPT"
+          },
+          "year": "2023",
+          "price": 8200000,
+          "description": {
+            "en": "A classical Greek oracle figure with a holographic AI interface for a head, streaming text and code. She sits on a throne made of circuit boards. Pilgrims with laptops approach. Ancient wisdom meets artificial intelligence.",
+            "de": "Eine klassische griechische Orakel-Figur mit holographischem KI-Interface als Kopf, der Text und Code streamt. Sie sitzt auf einem Thron aus Leiterplatten. Pilger mit Laptops nähern sich. Antike Weisheit trifft auf künstliche Intelligenz."
+          }
+        },
+        {
+          "id": "ai_03",
+          "filename": "ai_03_quantum_superposition.png",
+          "title": {
+            "en": "Schrödinger's Persistence",
+            "de": "Schrödingers Beständigkeit"
+          },
+          "year": "2024",
+          "price": 9000000,
+          "description": {
+            "en": "A melting clock exists in quantum superposition - simultaneously solid and liquid, present and absent. Quantum probability clouds surround it. A cat observes from the shadows. Physics meets surrealism at the quantum level.",
+            "de": "Eine schmelzende Uhr existiert in Quanten-Superposition - gleichzeitig fest und flüssig, anwesend und abwesend. Quanten-Wahrscheinlichkeitswolken umgeben sie. Eine Katze beobachtet aus den Schatten. Physik trifft Surrealismus auf Quantenebene."
+          }
+        },
+        {
+          "id": "ai_04",
+          "filename": "ai_04_metaverse_crucifixion.png",
+          "title": {
+            "en": "Crucifixion in the Metaverse",
+            "de": "Kreuzigung im Metaverse"
+          },
+          "year": "2022",
+          "price": 7800000,
+          "description": {
+            "en": "Christ figure suspended in a VR space made of polygons and wireframes. His body glitches between realities. VR headsets float like halos. Digital and physical worlds collide in this meditation on virtual spirituality.",
+            "de": "Christusfigur schwebend in einem VR-Raum aus Polygonen und Drahtgittern. Sein Körper glitcht zwischen Realitäten. VR-Headsets schweben wie Heiligenscheine. Digitale und physische Welten kollidieren in dieser Meditation über virtuelle Spiritualität."
+          }
+        },
+        {
+          "id": "ai_05",
+          "filename": "ai_05_singularity_melting.png",
+          "title": {
+            "en": "The Melting of the Singularity",
+            "de": "Das Schmelzen der Singularität"
+          },
+          "year": "2025",
+          "price": 10000000,
+          "description": {
+            "en": "A massive AI consciousness represented as a glowing sphere melts and drips upward into space. Human figures merge with the liquid AI. Time and space distort around it. The technological singularity as surrealist apocalypse.",
+            "de": "Ein massives KI-Bewusstsein, dargestellt als leuchtende Sphäre, schmilzt und tropft nach oben in den Weltraum. Menschliche Figuren verschmelzen mit der flüssigen KI. Zeit und Raum verzerren sich darum. Die technologische Singularität als surrealistische Apokalypse."
+          }
+        }
+      ]
+    }
+  ]
+}
+

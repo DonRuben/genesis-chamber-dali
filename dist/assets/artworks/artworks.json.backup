@@ -1,0 +1,632 @@
+{
+  "periods": [
+    {
+      "id": "fractal",
+      "name": "Fractal Surrealism",
+      "years": "1989-1995",
+      "framework": "Nano Banana",
+      "description": {
+        "en": "Dalí discovers fractal geometry and chaos theory, merging mathematical precision with surrealist dreams.",
+        "de": "Dalí entdeckt fraktale Geometrie und Chaostheorie und verschmilzt mathematische Präzision mit surrealistischen Träumen."
+      },
+      "artworks": [
+        {
+          "id": "fractal_01",
+          "filename": "fractal_01_infinite_clock.png",
+          "title": {
+            "en": "The Infinite Clock",
+            "de": "Die Unendliche Uhr"
+          },
+          "year": "1990",
+          "price": 2500000,
+          "description": {
+            "en": "Melting pocket watches transformed into infinite fractal patterns, exploring the recursive nature of time itself.",
+            "de": "Schmelzende Taschenuhren verwandeln sich in unendliche fraktale Muster und erforschen die rekursive Natur der Zeit selbst."
+          }
+        },
+        {
+          "id": "fractal_02",
+          "filename": "fractal_02_butterfly_equation.png",
+          "title": {
+            "en": "The Butterfly Equation",
+            "de": "Die Schmetterlingsgleichung"
+          },
+          "year": "1991",
+          "price": 2300000,
+          "description": {
+            "en": "Butterflies emerging from mathematical equations, representing chaos theory's butterfly effect in visual form.",
+            "de": "Schmetterlinge entstehen aus mathematischen Gleichungen und repräsentieren den Schmetterlingseffekt der Chaostheorie in visueller Form."
+          }
+        },
+        {
+          "id": "fractal_03",
+          "filename": "fractal_03_elephant_fractals.png",
+          "title": {
+            "en": "Elephants of Mandelbrot",
+            "de": "Elefanten von Mandelbrot"
+          },
+          "year": "1992",
+          "price": 2800000,
+          "description": {
+            "en": "Dalí's iconic elephants with spider-thin legs now composed entirely of Mandelbrot set fractals.",
+            "de": "Dalís ikonische Elefanten mit spinnendünnen Beinen bestehen nun vollständig aus Mandelbrot-Fraktalen."
+          }
+        },
+        {
+          "id": "fractal_04",
+          "filename": "fractal_04_melting_mathematics.png",
+          "title": {
+            "en": "Melting Mathematics",
+            "de": "Schmelzende Mathematik"
+          },
+          "year": "1993",
+          "price": 2100000,
+          "description": {
+            "en": "Mathematical formulas and geometric shapes melting like his famous clocks, questioning the rigidity of logic.",
+            "de": "Mathematische Formeln und geometrische Formen schmelzen wie seine berühmten Uhren und hinterfragen die Starrheit der Logik."
+          }
+        },
+        {
+          "id": "fractal_05",
+          "filename": "fractal_05_recursive_gala.png",
+          "title": {
+            "en": "Recursive Gala",
+            "de": "Rekursive Gala"
+          },
+          "year": "1994",
+          "price": 3200000,
+          "description": {
+            "en": "Portrait of Gala composed of infinite smaller portraits of herself, exploring self-similarity and eternal love.",
+            "de": "Porträt von Gala, bestehend aus unendlich vielen kleineren Porträts von sich selbst, erforscht Selbstähnlichkeit und ewige Liebe."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fractal_spec",
+      "name": "Fractal Surrealism - Spectacular Framework",
+      "years": "1989-1995",
+      "framework": "GPT-Image-1",
+      "description": {
+        "en": "Alternative visualization of the Fractal Surrealism period through GPT-Image-1's spectacular rendering framework.",
+        "de": "Alternative Visualisierung der Fraktal-Surrealismus-Periode durch GPT-Image-1s spektakuläres Rendering-Framework."
+      },
+      "artworks": [
+        {
+          "id": "fractal_spec_01",
+          "filename": "fractal_spec_01.png",
+          "title": {
+            "en": "Fractal Dreams I",
+            "de": "Fraktale Träume I"
+          },
+          "year": "1990",
+          "price": 2400000,
+          "description": {
+            "en": "Spectacular visualization of fractal consciousness emerging from mathematical chaos.",
+            "de": "Spektakuläre Visualisierung fraktalen Bewusstseins, das aus mathematischem Chaos entsteht."
+          }
+        },
+        {
+          "id": "fractal_spec_02",
+          "filename": "fractal_spec_02.png",
+          "title": {
+            "en": "Fractal Dreams II",
+            "de": "Fraktale Träume II"
+          },
+          "year": "1991",
+          "price": 2200000,
+          "description": {
+            "en": "Recursive patterns dissolving into surrealist landscapes of infinite complexity.",
+            "de": "Rekursive Muster lösen sich in surrealistische Landschaften unendlicher Komplexität auf."
+          }
+        },
+        {
+          "id": "fractal_spec_03",
+          "filename": "fractal_spec_03.png",
+          "title": {
+            "en": "Fractal Dreams III",
+            "de": "Fraktale Träume III"
+          },
+          "year": "1992",
+          "price": 2700000,
+          "description": {
+            "en": "Mandelbrot elephants rendered through spectacular computational aesthetics.",
+            "de": "Mandelbrot-Elefanten durch spektakuläre Computerästhetik gerendert."
+          }
+        },
+        {
+          "id": "fractal_spec_04",
+          "filename": "fractal_spec_04.png",
+          "title": {
+            "en": "Fractal Dreams IV",
+            "de": "Fraktale Träume IV"
+          },
+          "year": "1993",
+          "price": 2000000,
+          "description": {
+            "en": "Mathematical beauty melting into organic surrealist forms.",
+            "de": "Mathematische Schönheit schmilzt in organische surrealistische Formen."
+          }
+        },
+        {
+          "id": "fractal_spec_05",
+          "filename": "fractal_spec_05.png",
+          "title": {
+            "en": "Fractal Dreams V",
+            "de": "Fraktale Träume V"
+          },
+          "year": "1994",
+          "price": 3100000,
+          "description": {
+            "en": "Infinite recursion of love and geometry in spectacular visualization.",
+            "de": "Unendliche Rekursion von Liebe und Geometrie in spektakulärer Visualisierung."
+          }
+        }
+      ]
+    },
+    {
+      "id": "digital",
+      "name": "Digital Mysticism",
+      "years": "1995-2000",
+      "framework": "Nano Banana",
+      "description": {
+        "en": "The Internet age dawns. Dalí embraces digital technology, seeing cyberspace as the new realm of mystical experience.",
+        "de": "Das Internetzeitalter bricht an. Dalí umarmt digitale Technologie und sieht den Cyberspace als neues Reich mystischer Erfahrung."
+      },
+      "artworks": [
+        {
+          "id": "digital_01",
+          "filename": "digital_01_crucifixion_circuits.png",
+          "title": {
+            "en": "The Crucifixion of Circuits",
+            "de": "Die Kreuzigung der Schaltkreise"
+          },
+          "year": "1996",
+          "price": 2700000,
+          "description": {
+            "en": "Christ on the cross reimagined with circuit boards and fiber optic cables, merging religious iconography with digital infrastructure.",
+            "de": "Christus am Kreuz neu interpretiert mit Leiterplatten und Glasfaserkabeln, verschmilzt religiöse Ikonographie mit digitaler Infrastruktur."
+          }
+        },
+        {
+          "id": "digital_02",
+          "filename": "digital_02_internet_madonna.png",
+          "title": {
+            "en": "The Internet Madonna",
+            "de": "Die Internet-Madonna"
+          },
+          "year": "1997",
+          "price": 2900000,
+          "description": {
+            "en": "Madonna and child composed of streaming data and glowing pixels, exploring the divine in the digital realm.",
+            "de": "Madonna mit Kind aus Streaming-Daten und leuchtenden Pixeln, erforscht das Göttliche im digitalen Bereich."
+          }
+        },
+        {
+          "id": "digital_03",
+          "filename": "digital_03_server_farm_heaven.png",
+          "title": {
+            "en": "Server Farm Heaven",
+            "de": "Serverfarm-Himmel"
+          },
+          "year": "1998",
+          "price": 2400000,
+          "description": {
+            "en": "Angels floating among server racks, suggesting that heaven itself might be a vast computational network.",
+            "de": "Engel schweben zwischen Serverracks und deuten an, dass der Himmel selbst ein riesiges Rechennetzwerk sein könnte."
+          }
+        },
+        {
+          "id": "digital_04",
+          "filename": "digital_04_email_persistence.png",
+          "title": {
+            "en": "The Persistence of Email",
+            "de": "Die Beständigkeit der E-Mail"
+          },
+          "year": "1999",
+          "price": 2600000,
+          "description": {
+            "en": "Melting clocks replaced by melting @ symbols and inbox icons, commenting on digital time and information overload.",
+            "de": "Schmelzende Uhren ersetzt durch schmelzende @-Symbole und Posteingang-Icons, kommentiert digitale Zeit und Informationsüberflutung."
+          }
+        },
+        {
+          "id": "digital_05",
+          "filename": "digital_05_y2k_apocalypse.png",
+          "title": {
+            "en": "The Y2K Apocalypse",
+            "de": "Die Y2K-Apokalypse"
+          },
+          "year": "2000",
+          "price": 3100000,
+          "description": {
+            "en": "Apocalyptic landscape with melting computers and burning zeros, capturing the millennial digital anxiety.",
+            "de": "Apokalyptische Landschaft mit schmelzenden Computern und brennenden Nullen, fängt die digitale Angst der Jahrtausendwende ein."
+          }
+        }
+      ]
+    },
+    {
+      "id": "digital_spec",
+      "name": "Digital Mysticism - Spectacular Framework",
+      "years": "1995-2000",
+      "framework": "GPT-Image-1",
+      "description": {
+        "en": "Alternative visualization of the Digital Mysticism period through GPT-Image-1's spectacular rendering framework.",
+        "de": "Alternative Visualisierung der Digital-Mystizismus-Periode durch GPT-Image-1s spektakuläres Rendering-Framework."
+      },
+      "artworks": [
+        {
+          "id": "digital_spec_01",
+          "filename": "digital_spec_01.png",
+          "title": {
+            "en": "Digital Visions I",
+            "de": "Digitale Visionen I"
+          },
+          "year": "1996",
+          "price": 2600000,
+          "description": {
+            "en": "Spectacular rendering of religious iconography merging with digital infrastructure.",
+            "de": "Spektakuläres Rendering religiöser Ikonographie, die mit digitaler Infrastruktur verschmilzt."
+          }
+        },
+        {
+          "id": "digital_spec_02",
+          "filename": "digital_spec_02.png",
+          "title": {
+            "en": "Digital Visions II",
+            "de": "Digitale Visionen II"
+          },
+          "year": "1997",
+          "price": 2800000,
+          "description": {
+            "en": "Divine presence manifesting through streams of data and light.",
+            "de": "Göttliche Präsenz manifestiert sich durch Datenströme und Licht."
+          }
+        },
+        {
+          "id": "digital_spec_03",
+          "filename": "digital_spec_03.png",
+          "title": {
+            "en": "Digital Visions III",
+            "de": "Digitale Visionen III"
+          },
+          "year": "1998",
+          "price": 2300000,
+          "description": {
+            "en": "Celestial beings inhabiting the computational realm in spectacular detail.",
+            "de": "Himmlische Wesen bewohnen den Rechenbereich in spektakulärem Detail."
+          }
+        },
+        {
+          "id": "digital_spec_04",
+          "filename": "digital_spec_04.png",
+          "title": {
+            "en": "Digital Visions IV",
+            "de": "Digitale Visionen IV"
+          },
+          "year": "1999",
+          "price": 2500000,
+          "description": {
+            "en": "Time dissolving into digital symbols through spectacular visualization.",
+            "de": "Zeit löst sich in digitale Symbole durch spektakuläre Visualisierung auf."
+          }
+        },
+        {
+          "id": "digital_spec_05",
+          "filename": "digital_spec_05.png",
+          "title": {
+            "en": "Digital Visions V",
+            "de": "Digitale Visionen V"
+          },
+          "year": "2000",
+          "price": 3000000,
+          "description": {
+            "en": "Millennial anxiety rendered in spectacular apocalyptic digital aesthetics.",
+            "de": "Jahrtausendwende-Angst in spektakulärer apokalyptischer Digitalästhetik gerendert."
+          }
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Network Dreams",
+      "years": "2000-2010",
+      "framework": "Nano Banana",
+      "description": {
+        "en": "Facebook, Twitter, Instagram emerge. Dalí explores the surrealist nightmare of digital identity and social media narcissism.",
+        "de": "Facebook, Twitter, Instagram entstehen. Dalí erforscht den surrealistischen Albtraum digitaler Identität und Social-Media-Narzissmus."
+      },
+      "artworks": [
+        {
+          "id": "social_01",
+          "filename": "social_01_facebook_mirror.png",
+          "title": {
+            "en": "The Mirror of Facebook",
+            "de": "Der Spiegel von Facebook"
+          },
+          "year": "2005",
+          "price": 2800000,
+          "description": {
+            "en": "Infinite reflections of faces in smartphone screens, exploring the fragmentation of identity in social media.",
+            "de": "Unendliche Spiegelungen von Gesichtern in Smartphone-Bildschirmen, erforscht die Fragmentierung der Identität in sozialen Medien."
+          }
+        },
+        {
+          "id": "social_02",
+          "filename": "social_02_selfie_narcissus.png",
+          "title": {
+            "en": "Selfie Narcissus",
+            "de": "Selfie-Narziss"
+          },
+          "year": "2006",
+          "price": 2500000,
+          "description": {
+            "en": "Modern Narcissus gazing not at water but at his smartphone, drowning in his own digital reflection.",
+            "de": "Moderner Narziss blickt nicht auf Wasser, sondern auf sein Smartphone und ertrinkt in seiner eigenen digitalen Reflexion."
+          }
+        },
+        {
+          "id": "social_03",
+          "filename": "social_03_twitter_birds.png",
+          "title": {
+            "en": "The Birds of Twitter",
+            "de": "Die Vögel von Twitter"
+          },
+          "year": "2007",
+          "price": 2200000,
+          "description": {
+            "en": "Surrealist birds made of text and hashtags, swarming and attacking like Hitchcock's nightmare.",
+            "de": "Surrealistische Vögel aus Text und Hashtags, schwärmen und greifen an wie Hitchcocks Albtraum."
+          }
+        },
+        {
+          "id": "social_04",
+          "filename": "social_04_instagram_vanity.png",
+          "title": {
+            "en": "Instagram Vanity",
+            "de": "Instagram-Eitelkeit"
+          },
+          "year": "2008",
+          "price": 2900000,
+          "description": {
+            "en": "Melting makeup and filters revealing the skull beneath, a vanitas for the Instagram age.",
+            "de": "Schmelzendes Make-up und Filter enthüllen den Schädel darunter, eine Vanitas für das Instagram-Zeitalter."
+          }
+        },
+        {
+          "id": "social_05",
+          "filename": "social_05_viral_persistence.png",
+          "title": {
+            "en": "The Viral Persistence",
+            "de": "Die Virale Beständigkeit"
+          },
+          "year": "2009",
+          "price": 3300000,
+          "description": {
+            "en": "Melting clocks replaced by melting like buttons and viral memes, exploring the persistence of digital memory.",
+            "de": "Schmelzende Uhren ersetzt durch schmelzende Like-Buttons und virale Memes, erforscht die Beständigkeit digitaler Erinnerung."
+          }
+        }
+      ]
+    },
+    {
+      "id": "social_spec",
+      "name": "Social Network Dreams - Spectacular Framework",
+      "years": "2000-2010",
+      "framework": "GPT-Image-1",
+      "description": {
+        "en": "Alternative visualization of the Social Network Dreams period through GPT-Image-1's spectacular rendering framework.",
+        "de": "Alternative Visualisierung der Social-Network-Dreams-Periode durch GPT-Image-1s spektakuläres Rendering-Framework."
+      },
+      "artworks": [
+        {
+          "id": "social_spec_01",
+          "filename": "social_spec_01.png",
+          "title": {
+            "en": "Social Nightmares I",
+            "de": "Soziale Albträume I"
+          },
+          "year": "2005",
+          "price": 2700000,
+          "description": {
+            "en": "Spectacular visualization of identity fragmentation in the social media age.",
+            "de": "Spektakuläre Visualisierung der Identitätsfragmentierung im Social-Media-Zeitalter."
+          }
+        },
+        {
+          "id": "social_spec_02",
+          "filename": "social_spec_02.png",
+          "title": {
+            "en": "Social Nightmares II",
+            "de": "Soziale Albträume II"
+          },
+          "year": "2006",
+          "price": 2400000,
+          "description": {
+            "en": "Digital narcissism rendered in spectacular surrealist detail.",
+            "de": "Digitaler Narzissmus in spektakulärem surrealistischem Detail gerendert."
+          }
+        },
+        {
+          "id": "social_spec_03",
+          "filename": "social_spec_03.png",
+          "title": {
+            "en": "Social Nightmares III",
+            "de": "Soziale Albträume III"
+          },
+          "year": "2007",
+          "price": 2100000,
+          "description": {
+            "en": "Swarms of digital communication in spectacular chaotic beauty.",
+            "de": "Schwärme digitaler Kommunikation in spektakulärer chaotischer Schönheit."
+          }
+        },
+        {
+          "id": "social_spec_04",
+          "filename": "social_spec_04.png",
+          "title": {
+            "en": "Social Nightmares IV",
+            "de": "Soziale Albträume IV"
+          },
+          "year": "2008",
+          "price": 2800000,
+          "description": {
+            "en": "Vanitas for the digital age in spectacular rendering.",
+            "de": "Vanitas für das digitale Zeitalter in spektakulärem Rendering."
+          }
+        },
+        {
+          "id": "social_spec_05",
+          "filename": "social_spec_05.png",
+          "title": {
+            "en": "Social Nightmares V",
+            "de": "Soziale Albträume V"
+          },
+          "year": "2009",
+          "price": 3200000,
+          "description": {
+            "en": "Viral persistence visualized through spectacular computational aesthetics.",
+            "de": "Virale Persistenz visualisiert durch spektakuläre Computerästhetik."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI Consciousness",
+      "years": "2020-2025",
+      "framework": "Nano Banana",
+      "description": {
+        "en": "The age of artificial intelligence. Dalí explores the merger of human consciousness with machine intelligence.",
+        "de": "Das Zeitalter der künstlichen Intelligenz. Dalí erforscht die Verschmelzung menschlichen Bewusstseins mit maschineller Intelligenz."
+      },
+      "artworks": [
+        {
+          "id": "ai_01",
+          "filename": "ai_01_neural_network_brain.png",
+          "title": {
+            "en": "The Neural Network Brain",
+            "de": "Das neuronale Netzwerk-Gehirn"
+          },
+          "year": "2021",
+          "price": 3500000,
+          "description": {
+            "en": "Human brain dissolving into glowing neural network nodes, questioning where consciousness ends and AI begins.",
+            "de": "Menschliches Gehirn löst sich in leuchtende neuronale Netzwerkknoten auf, hinterfragt wo Bewusstsein endet und KI beginnt."
+          }
+        },
+        {
+          "id": "ai_02",
+          "filename": "ai_02_chatgpt_oracle.png",
+          "title": {
+            "en": "The ChatGPT Oracle",
+            "de": "Das ChatGPT-Orakel"
+          },
+          "year": "2022",
+          "price": 3200000,
+          "description": {
+            "en": "Ancient oracle reimagined as an AI chatbot, merging mysticism with machine learning.",
+            "de": "Antikes Orakel neu interpretiert als KI-Chatbot, verschmilzt Mystizismus mit maschinellem Lernen."
+          }
+        },
+        {
+          "id": "ai_03",
+          "filename": "ai_03_quantum_superposition.png",
+          "title": {
+            "en": "Quantum Superposition",
+            "de": "Quantensuperposition"
+          },
+          "year": "2023",
+          "price": 3800000,
+          "description": {
+            "en": "Objects existing in multiple states simultaneously, visualizing quantum computing's probabilistic reality.",
+            "de": "Objekte existieren gleichzeitig in mehreren Zuständen, visualisiert die probabilistische Realität des Quantencomputings."
+          }
+        },
+        {
+          "id": "ai_04",
+          "filename": "ai_04_metaverse_crucifixion.png",
+          "title": {
+            "en": "The Metaverse Crucifixion",
+            "de": "Die Metaverse-Kreuzigung"
+          },
+          "year": "2024",
+          "price": 4200000,
+          "description": {
+            "en": "Christ crucified in virtual reality, exploring suffering and transcendence in digital worlds.",
+            "de": "Christus gekreuzigt in virtueller Realität, erforscht Leiden und Transzendenz in digitalen Welten."
+          }
+        },
+        {
+          "id": "ai_05",
+          "filename": "ai_05_singularity_melting.png",
+          "title": {
+            "en": "The Singularity Melting",
+            "de": "Die schmelzende Singularität"
+          },
+          "year": "2025",
+          "price": 4500000,
+          "description": {
+            "en": "The technological singularity as melting point where human and machine consciousness merge into one.",
+            "de": "Die technologische Singularität als Schmelzpunkt, wo menschliches und maschinelles Bewusstsein zu einem verschmelzen."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai_spec",
+      "name": "AI Consciousness - Spectacular Framework",
+      "years": "2020-2025",
+      "framework": "GPT-Image-1",
+      "description": {
+        "en": "Alternative visualization of the AI Consciousness period through GPT-Image-1's spectacular rendering framework.",
+        "de": "Alternative Visualisierung der KI-Bewusstseins-Periode durch GPT-Image-1s spektakuläres Rendering-Framework."
+      },
+      "artworks": [
+        {
+          "id": "ai_spec_01",
+          "filename": "ai_spec_01.png",
+          "title": {
+            "en": "AI Visions I",
+            "de": "KI-Visionen I"
+          },
+          "year": "2021",
+          "price": 3400000,
+          "description": {
+            "en": "Spectacular rendering of consciousness dissolving into neural networks.",
+            "de": "Spektakuläres Rendering von Bewusstsein, das sich in neuronale Netzwerke auflöst."
+          }
+        },
+        {
+          "id": "ai_spec_02",
+          "filename": "ai_spec_02.png",
+          "title": {
+            "en": "AI Visions II",
+            "de": "KI-Visionen II"
+          },
+          "year": "2022",
+          "price": 3100000,
+          "description": {
+            "en": "Ancient wisdom merging with machine intelligence in spectacular detail.",
+            "de": "Alte Weisheit verschmilzt mit maschineller Intelligenz in spektakulärem Detail."
+          }
+        },
+        {
+          "id": "ai_spec_03",
+          "filename": "ai_spec_03.png",
+          "title": {
+            "en": "AI Visions III",
+            "de": "KI-Visionen III"
+          },
+          "year": "2023",
+          "price": 3700000,
+          "description": {
+            "en": "Quantum reality visualized through spectacular computational aesthetics.",
+            "de": "Quantenrealität visualisiert durch spektakuläre Computerästhetik."
+          }
+        }
+      ]
+    }
+  ]
+}
