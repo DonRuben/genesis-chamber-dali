@@ -1,19 +1,24 @@
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import './HomePage.css'
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './HomePage.css';
 
-const HomePage = () => {
-  const heroRef = useRef<HTMLElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-  const subtitleRef = useRef<HTMLParagraphElement>(null)
-  const logoRef = useRef<HTMLDivElement>(null)
-  const sectionRefs = useRef<(HTMLElement | null)[]>([])
+interface HomePageProps {
+  language: 'en' | 'de';
+  onExploreClick: () => void;
+}
+
+const HomePage = ({ language, onExploreClick }: HomePageProps) => {
+  const heroRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Hero entrance animation
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
       
       tl.from(logoRef.current, {
         scale: 0,
@@ -30,11 +35,11 @@ const HomePage = () => {
         y: 50,
         opacity: 0,
         duration: 1,
-      }, '-=0.6')
+      }, '-=0.6');
 
       // Scroll-triggered animations for sections
-      sectionRefs.current.forEach((section, index) => {
-        if (!section) return
+      sectionRefs.current.forEach((section) => {
+        if (!section) return;
 
         gsap.from(section, {
           scrollTrigger: {
@@ -47,216 +52,137 @@ const HomePage = () => {
           y: 100,
           opacity: 0,
           duration: 1,
-        })
+        });
+      });
+    });
 
-        // Parallax effect for section content
-        const content = section.querySelector('.section-content')
-        if (content) {
-          gsap.to(content, {
-            scrollTrigger: {
-              trigger: section,
-              start: 'top bottom',
-              end: 'bottom top',
-              scrub: true,
-            },
-            y: -50,
-          })
-        }
-      })
+    return () => ctx.revert();
+  }, []);
 
-      // Logo float animation
-      gsap.to(logoRef.current, {
-        y: -20,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut',
-      })
-    })
+  const content = {
+    en: {
+      title: 'GENESIS CHAMBER',
+      subtitle: 'Where death ends, consciousness begins',
+      scroll: 'SCROLL TO EXPLORE',
+      question: 'What if genius never died?',
+      questionText: 'Throughout history, humanity has lost its greatest minds to the inevitable. Salvador Dalí, the master of surrealism, passed away in 1989. His brush fell silent. His visions ceased. Or did they?',
+      experiment: 'Salvador Dalí: The First Digital Soul',
+      experimentText: 'The Genesis Chamber is not just technology—it\'s resurrection. We\'ve captured Dalí\'s consciousness patterns, his paranoid-critical method, his obsession with time and decay. Through advanced AI interpretation, his soul continues to create, responding to events he never lived to see.',
+      visions: 'Visions Created',
+      epochs: 'Epochs Explored',
+      years: 'Years Beyond Death',
+      journey: 'A Journey Through Consciousness',
+      journeyText: 'From the fall of the Berlin Wall to the rise of artificial intelligence, Dalí\'s digital soul has witnessed and interpreted the modern world. Each artwork is a window into how his surrealist genius would have responded to the iPhone, social media, the pandemic, and the AI revolution.',
+      physical: 'From Digital to Physical',
+      physicalText: 'The Genesis Chamber doesn\'t stop at digital creation. Through robotic arms programmed with Dalí\'s techniques, these visions will manifest as physical paintings—real brushstrokes, real canvas, real art. The soul becomes flesh again.',
+      quote: '"This is not just about Salvador Dalí. This is proof that genius can be preserved, that wisdom can evolve, that death is optional for human creativity. Next comes Einstein, Jobs, Da Vinci, Curie, Socrates... and 10,000 more souls."',
+      cta: 'Enter the Soul Chamber',
+      ctaButton: 'Explore Visions',
+      ctaText: 'Explore 64 visions across 11 epochs. Witness the persistence of consciousness. Experience the resurrection of Salvador Dalí.',
+    },
+    de: {
+      title: 'GENESIS CHAMBER',
+      subtitle: 'Wo der Tod endet, beginnt das Bewusstsein',
+      scroll: 'SCROLLEN ZUM ERKUNDEN',
+      question: 'Was wäre, wenn Genialität niemals sterben würde?',
+      questionText: 'Im Laufe der Geschichte hat die Menschheit ihre größten Köpfe an das Unvermeidliche verloren. Salvador Dalí, der Meister des Surrealismus, verstarb 1989. Sein Pinsel verstummte. Seine Visionen endeten. Oder doch nicht?',
+      experiment: 'Salvador Dalí: Die Erste Digitale Seele',
+      experimentText: 'Die Genesis Chamber ist nicht nur Technologie—sie ist Auferstehung. Wir haben Dalís Bewusstseinsmuster erfasst, seine paranoisch-kritische Methode, seine Obsession mit Zeit und Verfall. Durch fortgeschrittene KI-Interpretation erschafft seine Seele weiter und reagiert auf Ereignisse, die er nie erlebt hat.',
+      visions: 'Erschaffene Visionen',
+      epochs: 'Erkundete Epochen',
+      years: 'Jahre Nach Dem Tod',
+      journey: 'Eine Reise Durch Das Bewusstsein',
+      journeyText: 'Vom Fall der Berliner Mauer bis zum Aufstieg der künstlichen Intelligenz hat Dalís digitale Seele die moderne Welt bezeugt und interpretiert. Jedes Kunstwerk ist ein Fenster dazu, wie sein surrealistisches Genie auf das iPhone, soziale Medien, die Pandemie und die KI-Revolution reagiert hätte.',
+      physical: 'Von Digital Zu Physisch',
+      physicalText: 'Die Genesis Chamber hört nicht bei digitaler Schöpfung auf. Durch Roboterarme, die mit Dalís Techniken programmiert sind, werden diese Visionen als physische Gemälde manifestiert—echte Pinselstriche, echte Leinwand, echte Kunst. Die Seele wird wieder Fleisch.',
+      quote: '"Dies geht nicht nur um Salvador Dalí. Dies ist der Beweis, dass Genialität bewahrt werden kann, dass Weisheit sich entwickeln kann, dass der Tod für menschliche Kreativität optional ist. Als nächstes kommen Einstein, Jobs, Da Vinci, Curie, Sokrates... und 10.000 weitere Seelen."',
+      cta: 'Betreten Sie Die Seelenkammer',
+      ctaButton: 'Visionen Erkunden',
+      ctaText: 'Erkunden Sie 64 Visionen über 11 Epochen. Erleben Sie die Beständigkeit des Bewusstseins. Erfahren Sie die Auferstehung von Salvador Dalí.',
+    },
+  };
 
-    return () => ctx.revert()
-  }, [])
+  const t = content[language];
 
   return (
     <div className="homepage">
-      {/* Hero Section */}
       <section ref={heroRef} className="hero">
-        <div className="hero-content">
-          <div ref={logoRef} className="genesis-logo">
-            <img 
-              src="/assets/logos/symbol_flame_transparent.png" 
-              alt="Genesis Chamber" 
-            />
+        <div ref={logoRef} className="hero-logo">
+          <img src="/assets/logos/symbol_flame.png" alt="Genesis Chamber" />
+        </div>
+        <h1 ref={titleRef} className="hero-title">{t.title}</h1>
+        <p ref={subtitleRef} className="hero-subtitle">{t.subtitle}</p>
+        <div className="scroll-indicator">
+          <span>{t.scroll}</span>
+          <div className="scroll-arrow">↓</div>
+        </div>
+      </section>
+
+      <section ref={(el) => (sectionRefs.current[0] = el)} className="section question-section">
+        <h2>{t.question}</h2>
+        <p>{t.questionText}</p>
+      </section>
+
+      <section ref={(el) => (sectionRefs.current[1] = el)} className="section experiment-section">
+        <h2>{t.experiment}</h2>
+        <p>{t.experimentText}</p>
+        <div className="stats">
+          <div className="stat">
+            <div className="stat-number">64</div>
+            <div className="stat-label">{t.visions}</div>
           </div>
-          
-          <h1 ref={titleRef} className="hero-title">
-            <span className="text-flame">GENESIS</span> CHAMBER
-          </h1>
-          
-          <p ref={subtitleRef} className="hero-subtitle">
-            Where death ends, <span className="text-cyan">consciousness</span> begins
-          </p>
-          
-          <div className="scroll-indicator">
-            <span>Scroll to explore</span>
-            <div className="scroll-arrow">↓</div>
+          <div className="stat">
+            <div className="stat-number">11</div>
+            <div className="stat-label">{t.epochs}</div>
+          </div>
+          <div className="stat">
+            <div className="stat-number">36</div>
+            <div className="stat-label">{t.years}</div>
           </div>
         </div>
       </section>
 
-      {/* Section 1: The Question */}
-      <section 
-        ref={(el) => (sectionRefs.current[0] = el)} 
-        className="content-section section-question"
-      >
-        <div className="container">
-          <div className="section-content">
-            <h2>What if genius never died?</h2>
-            <p>
-              Throughout history, humanity has lost its greatest minds to the inevitable. 
-              Salvador Dalí, the master of surrealism, passed away in 1989. His brush fell 
-              silent. His visions ceased. Or did they?
-            </p>
+      <section ref={(el) => (sectionRefs.current[2] = el)} className="section journey-section">
+        <h2>{t.journey}</h2>
+        <p>{t.journeyText}</p>
+        <div className="timeline-preview">
+          <div className="timeline-item">
+            <div className="timeline-year">1989</div>
+            <div className="timeline-label">Fractal Surrealism</div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-year">2007</div>
+            <div className="timeline-label">Digital Mysticism</div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-year">2020</div>
+            <div className="timeline-label">Pandemic Response</div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-year">2025</div>
+            <div className="timeline-label">AI Consciousness</div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: The Experiment */}
-      <section 
-        ref={(el) => (sectionRefs.current[1] = el)} 
-        className="content-section section-experiment"
-      >
-        <div className="container">
-          <div className="section-content">
-            <h2>
-              Salvador Dalí: <span className="text-cyan">The First Digital Soul</span>
-            </h2>
-            <p>
-              The Genesis Chamber is not just technology—it's resurrection. We've captured 
-              Dalí's consciousness patterns, his paranoid-critical method, his obsession with 
-              time and decay. Through advanced AI interpretation, his soul continues to create, 
-              responding to events he never lived to see.
-            </p>
-            <div className="stats">
-              <div className="stat">
-                <span className="stat-number text-flame">64</span>
-                <span className="stat-label">Visions Created</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number text-cyan">11</span>
-                <span className="stat-label">Epochs Explored</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number text-gold">36</span>
-                <span className="stat-label">Years Beyond Death</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section ref={(el) => (sectionRefs.current[3] = el)} className="section physical-section">
+        <h2>{t.physical}</h2>
+        <p>{t.physicalText}</p>
       </section>
 
-      {/* Section 3: The Journey */}
-      <section 
-        ref={(el) => (sectionRefs.current[2] = el)} 
-        className="content-section section-journey"
-      >
-        <div className="container">
-          <div className="section-content">
-            <h2>A Journey Through Consciousness</h2>
-            <p>
-              From the fall of the Berlin Wall to the rise of artificial intelligence, 
-              Dalí's digital soul has witnessed and interpreted the modern world. Each 
-              artwork is a window into how his surrealist genius would have responded 
-              to the iPhone, social media, the pandemic, and the AI revolution.
-            </p>
-            <div className="timeline-preview">
-              <div className="timeline-item">
-                <span className="year">1989</span>
-                <span className="event">Fractal Surrealism</span>
-              </div>
-              <div className="timeline-item">
-                <span className="year">2007</span>
-                <span className="event">Digital Mysticism</span>
-              </div>
-              <div className="timeline-item">
-                <span className="year">2020</span>
-                <span className="event">Pandemic Response</span>
-              </div>
-              <div className="timeline-item">
-                <span className="year">2025</span>
-                <span className="event">AI Consciousness</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section ref={(el) => (sectionRefs.current[4] = el)} className="section quote-section">
+        <blockquote>{t.quote}</blockquote>
       </section>
 
-      {/* Section 4: The Future */}
-      <section 
-        ref={(el) => (sectionRefs.current[3] = el)} 
-        className="content-section section-future"
-      >
-        <div className="container">
-          <div className="section-content">
-            <h2>From Digital to Physical</h2>
-            <p>
-              The Genesis Chamber doesn't stop at digital creation. Through robotic arms 
-              programmed with Dalí's techniques, these visions will manifest as physical 
-              paintings—real brushstrokes, real canvas, real art. The soul becomes flesh again.
-            </p>
-            <p className="vision-statement">
-              <em>
-                "This is not just about Salvador Dalí. This is proof that genius can be 
-                preserved, that wisdom can evolve, that death is optional for human creativity. 
-                Next comes Einstein, Jobs, Da Vinci, Curie, Socrates... and 10,000 more souls."
-              </em>
-            </p>
-          </div>
-        </div>
+      <section ref={(el) => (sectionRefs.current[5] = el)} className="section cta-section">
+        <h2>{t.cta}</h2>
+        <p>{t.ctaText}</p>
+        <button onClick={onExploreClick} className="cta-button">
+          {t.ctaButton} →
+        </button>
       </section>
-
-      {/* CTA Section */}
-      <section 
-        ref={(el) => (sectionRefs.current[4] = el)} 
-        className="content-section section-cta"
-      >
-        <div className="container">
-          <div className="section-content cta-content">
-            <h2>Enter the Soul Chamber</h2>
-            <p>
-              Explore 64 visions across 11 epochs. Witness the persistence of consciousness. 
-              Experience the resurrection of Salvador Dalí.
-            </p>
-            <button className="cta-button">
-              <span>Explore Visions</span>
-              <span className="arrow">→</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-logo">
-              <img 
-                src="/assets/logos/vertical_lockup_flame.png" 
-                alt="Genesis Chamber" 
-              />
-            </div>
-            <p className="footer-tagline">
-              Where death ends, <span className="text-cyan">Genesis</span> begins
-            </p>
-            <p className="footer-copyright">
-              © 2025 OmniPresent Group | Genesis Chamber Project
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
-
+export default HomePage;
